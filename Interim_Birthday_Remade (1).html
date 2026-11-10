@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b10">
+<title>Happy Birthday, Interim</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--bg:#090b10;--gold:#d8b875;--gold2:#f2dda9;--white:#f4f1e9;--muted:#a4abb6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#22202a 0%,#0d1119 45%,#080a0f 100%);color:var(--white);font-family:'DM Sans',sans-serif;display:grid;place-items:center;padding:24px;overflow-x:hidden}
+.card{width:min(680px,100%);padding:clamp(30px,7vw,66px);border:1px solid rgba(216,184,117,.25);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:0 28px 90px rgba(0,0,0,.42);text-align:center;position:relative;overflow:hidden;animation:appear .9s ease both}
+.card:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid rgba(216,184,117,.09);top:-190px;left:calc(50% - 140px);box-shadow:0 0 0 25px rgba(216,184,117,.018),0 0 0 55px rgba(216,184,117,.012)}
+.tag{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+h1{font:500 clamp(46px,10vw,82px)/1 'Playfair Display',serif;letter-spacing:-.04em;margin:0}
+h1 span{display:block;color:var(--gold2);font-style:italic;margin-top:8px}
+.rule{height:1px;width:54px;background:var(--gold);margin:28px auto}
+.message{font-size:15px;line-height:1.9;color:#c3c8d0;max-width:470px;margin:0 auto}
+.message strong{color:var(--white);font-weight:600}
+button{margin-top:30px;border:1px solid rgba(216,184,117,.55);background:rgba(216,184,117,.1);color:var(--gold2);border-radius:999px;padding:14px 22px;font:600 11px 'DM Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:.25s}
+button:hover{background:var(--gold);color:#101116;transform:translateY(-2px)}
+.joke{display:none;margin:25px auto 0;padding:18px;border-radius:14px;background:rgba(216,184,117,.07);color:var(--gold2);font:500 20px/1.5 'Playfair Display',serif;max-width:440px}
+.joke.show{display:block;animation:appear .45s ease both}
+.sign{margin-top:34px;color:var(--gold);font-size:12px;letter-spacing:.13em}
+.footer{margin-top:42px;color:#68717e;font-size:9px;letter-spacing:.22em;text-transform:uppercase}
+.spark{position:fixed;width:3px;height:3px;border-radius:50%;background:var(--gold2);opacity:.5;animation:float 5s ease-in-out infinite}
+.a{top:18%;left:13%}.b{top:27%;right:12%;animation-delay:1s}.c{bottom:17%;left:22%;animation-delay:2s}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{50%{transform:translateY(-13px);opacity:1}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="spark a"></div><div class="spark b"></div><div class="spark c"></div>
+<main class="card">
+  <div class="tag">A little birthday acknowledgement</div>
+  <h1>Happy Birthday<span>Interim.</span></h1>
+  <div class="rule"></div>
+  <p class="message">
+    Wishing you well in every aspect of life — good health, peace of mind,
+    happiness, growth, meaningful opportunities, financial progress, and success
+    in everything you're working towards. May this new chapter bring you more
+    reasons to be grateful and plenty of wins to celebrate.
+    <br><br>
+    <strong>Enjoy your day. More life and blessings.</strong>
+  </p>
+  <button id="surprise" type="button">One last thing ↗</button>
+  <div class="joke" id="joke">
+    We may not hang out or talk as much lately, but we're cool, bro. No pressure and no hard feelings — we're both out here grinding and handling our own journeys. Keep pushing, keep growing, and may we both keep winning in our own ways. 🤝
+  </div>
+  <div class="sign">— SAINT</div>
+  <div class="footer">Respectfully · Birthday Edition 2026</div>
+</main>
+<script>
+const button=document.getElementById('surprise');
+const joke=document.getElementById('joke');
+button.addEventListener('click',()=>{
+  joke.classList.toggle('show');
+  button.textContent=joke.classList.contains('show')?'Message unlocked ✓':'One last thing ↗';
+});
+</script>
+</body>
+</html>
